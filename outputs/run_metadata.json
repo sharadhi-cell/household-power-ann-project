@@ -1,0 +1,45 @@
+{
+  "seed": 42,
+  "rows_after_cleaning": 2049436,
+  "split_counts": {
+    "train": 1434605,
+    "validation": 307415,
+    "test": 307416
+  },
+  "time_ranges": {
+    "train": [
+      "2006-12-16 17:24:00",
+      "2009-09-13 16:32:00"
+    ],
+    "validation": [
+      "2009-09-13 16:33:00",
+      "2010-04-18 17:53:00"
+    ],
+    "test": [
+      "2010-04-18 17:54:00",
+      "2010-11-26 21:02:00"
+    ]
+  },
+  "features": [
+    "Global_reactive_power",
+    "Voltage",
+    "Global_intensity",
+    "Sub_metering_1",
+    "Sub_metering_2",
+    "Sub_metering_3",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "month_sin",
+    "month_cos"
+  ],
+  "target": "Global_active_power",
+  "label_method": "training-period one-third and two-thirds quantiles",
+  "training_quantile_thresholds_kw": {
+    "q1": 0.336,
+    "q2": 1.364
+  },
+  "missing_data_policy": "numeric forward-fill up to 5 rows, then drop unresolved rows",
+  "note": "No test-based tuning. Labels and scaler fitted on training data only. Global_active_power is excluded from input features because it defines the target labels."
+}
